@@ -87,7 +87,9 @@
         <p class="status-tarefa">
           <button
             [ngClass]="(tarefa.statusFinalizado == true) ? 'icone-checked' : 'icone-unchecked'"
-            (click)="finalizarTarefa(tarefa.id);">
+            (click)="finalizarTarefa(tarefa.id);"
+            [@checkButton]="(tarefa.id === id ? 'checked' : 'unchecked')"
+            >
           </button>
         </p>
       </div>
@@ -116,4 +118,3 @@
 <ng-template #semTarefas>
   <p class="ng-template ff-prompt">Olá! Ainda não há tarefas por aqui! :)</p>
 </ng-template>
-
